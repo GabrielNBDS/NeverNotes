@@ -16,6 +16,26 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
+router.get("/search", withAuth, async (req, res) => {
+  const { query } = req.query;
+  /* try { */
+    let notes = await Note
+    .find({author: req.user._id })
+    .find({$text: {$search: query}})
+    res.status(200).json(notes);
+  /* } catch (error) {
+    res.status(500).json({ error: error });
+  } */
+});
+router.get("/", withAuth, async (req, res) => {
+  try {
+    let notes = await Note.find({ author: req.user._id });
+    res.json(notes);
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
+});
+
 router.get("/:id", withAuth, async (req, res) => {
   try {
     const { id } = req.params;
@@ -30,14 +50,6 @@ router.get("/:id", withAuth, async (req, res) => {
   }
 });
 
-router.get("/", withAuth, async (req, res) => {
-  try {
-    let notes = await Note.find({ author: req.user._id });
-    res.json(notes);
-  } catch (error) {
-    res.status(500).json({ error: error });
-  }
-});
 
 router.put("/:id", withAuth, async (req, res) => {
   const { title, body } = req.body;
@@ -47,7 +59,7 @@ router.put("/:id", withAuth, async (req, res) => {
     let note = await Note.findById(id);
     if (isOwner(req.user, note)) {
       let note = await Note.findOneAndUpdate(
-        {_id: id}, 
+        { _id: id },
         { $set: { title: title, body: body } },
         { upsert: true, "new": true }
       );
