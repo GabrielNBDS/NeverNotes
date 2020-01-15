@@ -18,14 +18,14 @@ router.post("/", withAuth, async (req, res) => {
 
 router.get("/search", withAuth, async (req, res) => {
   const { query } = req.query;
-  /* try { */
+  try {
     let notes = await Note
     .find({author: req.user._id })
     .find({$text: {$search: query}})
     res.status(200).json(notes);
-  /* } catch (error) {
+  } catch (error) {
     res.status(500).json({ error: error });
-  } */
+  }
 });
 router.get("/", withAuth, async (req, res) => {
   try {
