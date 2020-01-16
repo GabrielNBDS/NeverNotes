@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, {  useState } from "react";
 import {
   Button,
   Field,
@@ -34,7 +34,7 @@ const RegisterForm = () => {
   }
 
   return (
-    <Fragment>
+    <>
       <Column.Group centered>
         <form onSubmit={handleSubmit}>
           <Column size={12}>
@@ -97,7 +97,7 @@ const RegisterForm = () => {
           </Column>
         </form>
       </Column.Group>
-    </Fragment>
+    </>
   );
 };
 

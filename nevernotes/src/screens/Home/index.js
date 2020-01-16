@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import presentationImage from "../../assets/images/presentation.png";
 import Header from "../../components/Header";
 import { Column, Section, Title, Container } from "rbx";
@@ -6,7 +6,7 @@ import "../../styles/home.scss";
 import { Link } from "react-router-dom";
 
 const HomeScreen = () => (
-  <Fragment>
+  <>
     <Header />
 
     <Section size="medium" className="home">
@@ -35,7 +35,7 @@ const HomeScreen = () => (
         </Column.Group>
       </Container>
     </Section>
-  </Fragment>
+  </>
 );
 
 export default HomeScreen;

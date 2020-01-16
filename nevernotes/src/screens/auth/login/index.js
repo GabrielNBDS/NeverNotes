@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Header from "../../../components/Header";
 import { Column, Section, Title, Container, Card } from "rbx";
 import logoImage from "../../../assets/images/logo.png";
@@ -7,7 +7,7 @@ import LoginForm from "../../../components/auth/login_form";
 
 
 const LoginScreen = () => (
-  <Fragment>
+  <>
     <Header />
     <Section size="medium" className="auth">
       <Container>
@@ -40,7 +40,7 @@ const LoginScreen = () => (
         </Column.Group>
       </Container>
     </Section>
-  </Fragment>
+  </>
 );
 
 export default LoginScreen;

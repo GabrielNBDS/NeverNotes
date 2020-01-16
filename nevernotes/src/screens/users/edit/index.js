@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 const UserEditScreen = () => (
-  <Fragment>
+  <>
     Hello World
-  </Fragment>
+  </>
 );
 
 export default UserEditScreen;
