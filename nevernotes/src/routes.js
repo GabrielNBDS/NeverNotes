@@ -15,7 +15,6 @@ const Routes = () => (
       <Route exact path='/register' component={RegisterScreen} />
       <Route exact path='/login' component={LoginScreen} />
       <PrivateRouter exact path='/notes' component={NotesIndexScreen} />
-      <PrivateRouter exact path='/users/edit' component={UserEditScreen} />
     </Switch>
   </BrowserRouter>
 );
