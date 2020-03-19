@@ -6,6 +6,6 @@
 
 #### Como iniciar
 
-Entre na pasta ```nevernotes``` e na ```nevernotes_api``` e rode ```yarn install```. Quando todas as dependencies estiverem instaladas, rode yarn start em cada uma das pastas. 
+rode ```yarn/npm install``` na pasta ```nevernotes``` e na ```nevernotes_api```. Quando todas as dependencies estiverem instaladas, rode yarn start em cada uma das pastas. 
 
 obs: Necessário ter o mongodb instalado
